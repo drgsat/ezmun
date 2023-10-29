@@ -1,218 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-<meta property="og:title" content="ezmûna pergala sinirî a lawiran">
-  <meta property="og:description" content="di vî linkî de ezmûna pergala sinirî a lawiran heye ">
-  <meta property="og:image" content="https://static.vecteezy.com/system/resources/previews/027/013/992/large_2x/biology-doodle-set-collection-of-hand-drawn-elements-science-biology-circle-shape-illustration-isolated-on-a-white-background-vector.jpg">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ezmûn</title>
-
+    <title>Document</title>
     <style>
-        /* style.css */
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-   
-   background-image: url("https://www.ibelieveinsci.com/wp-content/uploads/ALevel-Biology-1170x560-384x253.jpg");
-
+        body{       
+            margin: 0;
+        }
+.photo{ 
+    position: relative;
+   background-color: aqua;
+   width: 100%;
+   height: 175vw;
+   overflow: hidden
 }
-
-h1 {
-    color: #333;
+#img-drg{
+   position: relative;
+   height: 100%;
+   width:450vw;
+right: 1310px;
+}
+.butt{
+    display: flex;
+justify-content:center;
+}
+.butt > button{
+    width: 20%;
+}
+.dr{
+    position: fixed;
+text-align: center;
+   display: block;
+    z-index: 1;
     background-color: rgb(255, 255, 255);
-    border-radius: 25px;
-  
-  
+  right: 0;
+  top: 8%;
+  width: 12%;
+  border: 1px;
+  border-color: black;
 }
-
-#question-container {
-    margin: 20px auto;
-    width: 100%;
-    border: 3px solid #ccc; 
-   text-align: center;
-    padding-top: 10px; /* زيادة المسافة البادئة العلوية */
-margin-right: 5px;
-
-}
-
-
-#choices li {
-width:90%;
-   
-    list-style-type: none;
-    margin-bottom: 15px; /* زيادة التباعد بين العناصر */
-}
-button {
-    width: 100%;
-    font-size:x-large; /* قم بتعديل حجم الخط حسب الحاجة */
-height: 60px;
-background-color: rgb(238, 247, 155);
-border-radius: 25px;
-color: rgb(0, 0, 0);
-}
-#question{
-   font-size:x-large;
-background-color: aliceblue;
-border-radius: 10px;
-}
-h2{
-font-size:xx-large;
-
-}
-#pirshej{
-    width: 100%;
-
-}
-.container{
+.dr h5{
+    padding-bottom: 9px;
     
-    display: inline;
-height: 80px;
-    width: 100%;
     justify-content: center;
-    
+    align-items: center;
+  
+
 }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>Pergala Sinirî ya Lawiran</h1>
+<body> 
+    <div class="butt">
+        <button onclick=" pensem()">الخميس</button>
+        <button onclick="carsem()">الاربعاء</button> 
+        <button onclick="sesem()">الثلاثاء</button> 
+        <button onclick="dusem()">الاثنين</button>   
+        <button onclick="yeksem()">الاحد</button>      
     </div>
-   
+     
+    <div class="dr">
+     <h5>10/5 ك</h5> 
+     <h5>10/4 ك</h5> 
+     <h5>11 ع ك</h5>
+     <h5>11 د ك</h5>  
+     <h5>12 ع ك</h5> 
+     <h5>12 د ك</h5> 
+     <h5>10/1</h5> 
+     <h5>10/2</h5> 
+     <h5>11 ع ع</h5> 
+     <h5>11 د ع</h5> 
+     <h5>12 ع ع</h5> 
+     <h5>12 د ع</h5> 
+     <h5>10/3</h5> 
     
-    <div id="question-container">
-        <div id="pirshej">Pirsa : 1</div>
-        <p id="question"></p>
-        <ul id="choices">
-            <li><button onclick="checkAnswer(0)"></button></li>
-            <li><button onclick="checkAnswer(1)"></button></li>
-            <li><button onclick="checkAnswer(2)"></button></li>
-            <li><button onclick="checkAnswer(3)"></button></li>
-        </ul>
+      
     </div>
-    <script>
-        // script.js
-var questions = [
-{
-    question: "Em dikarin bêjin ku pergaleke sinirî ji Amîp re heye ?",
-    choices: ["Na", "Heye", "Pergaleke hormonî", "Erê"],
-    correctAnswer: 0
-},
-{
-    question: "kî bi rola pergala sinirî radibe li cem Amîp??",
-    choices: ["Bijank", "heyberên bi zirar", "protoplazma", "ne tiştek"],
-    correctAnswer: 2
-},
-{
-    question: "Paramisiyom di riya çi re tevdigere?",
-    choices: ["tayên sinirî", "Bijank", "dest û leng", "pergala sinirî"],
-    correctAnswer: 1
-}, 
-{
-    question: "pêhesîn li cem Paramisiyomê di riya ........ re çêdibe.",
-    choices: ["tayên sinirî", "libkok", "Bijank", "Di riya Xerbê Cihuyan re"],
-    correctAnswer: 0
-},
-{
-    question: "yek ji van zindiyan ji lawirê bê hestiye:",
-    choices: ["paramisiyom", "yoglîna", "Beq", "Haydra"],
-    correctAnswer: 3
-},
-{
-    question: "Haydra tê qurmiçandin bi alikariya:",
-    choices: ["şaneyên masûlkeyî", "şaneyên pêvedanê", "heyberên bi zirar", "ne tiştek"],
-    correctAnswer: 0
-},
-{
-    question: "yek ji van têgehan li cem kurmê erdê tuneye:",
-    choices: ["girêka cotî ya mejiyî", "girêka li jêra daqurtekê", "sinirên derzika piştê", "girêka sinirî zikokî"],
-    correctAnswer: 2
-},
-{
-    question: "yek jivan zindiya ne ji lawirên bihestiye:",
-    choices: ["ker", "kûçik", "masî", "kurmê erdê"],
-    correctAnswer: 3
-},{
-    question: "ji tevneke sinirî a nerim pêk tê û ji mêjî dirêj dibe:",
-    choices: ["sinir", "mejiyê derzika piştê", "derzika piştê", "pergala sinirî"],
-    correctAnswer: 1
-},{
-    question: "hişiyariyan ji mejî û mejiyê derzika piştê radigihînin masûlkeyan :",
-    choices: ["sinirên tevgerê", "sinirên pêhesînê", "sinirên masulkeyî", "ne tiştek"],
-    correctAnswer: 0
-},
-{
-    question: "ev cureyê masulkeyan -bê- xwesteka masî ne :",
-    choices: ["masûlkeyên hilû", "masûlkeyên aliyî", "masûlkeyên tevgerê", "masûlkeya dev"],
-    correctAnswer: 0
-},
-{
-    question: "filkeyên dîtinê li cem beqê di kûderê de bi cih dibin??",
-    choices: ["mêjiyê piştê", "mêjiyê pêşî", "derzika piştê", "mêjiyê nîvîn"],
-    correctAnswer: 3
-},
-{
-    question: "pergala sinirî a navendî :",
-    choices: ["mejî û sinirên mejî", "mejiyê derzika piştê û mejî", "mejî û mejiyê piştê", "sinirên mejî û mejiyê derzika piştê"],
-    correctAnswer: 1
-},
-{
-    question: "sinirên mejî ji pergala sinirî a ....... ne",
-    choices: ["belavbûyî", "navendî", "aliyî", "şaşe"],
-    correctAnswer: 0
-}, {
-    question: "li cem beqê sinirê 7,8,9,10 diçin bi aliyê :",
-    choices: ["qarçikê", "piştê û qarçikê", "pêş", "yekbûyîn di navbera wan de çêdibe "],
-    correctAnswer: 1
-},
-{
-    question: "sinireke di bin ziman de ye :",
-    choices: ["duyem", "siyem", "yekem", "7,8,9,10"],
-    correctAnswer: 2
-},// إضافة المزيد من الأسئلة هنا
-];
-
-var currentQuestion = 0;
-var score = 0;
-
-function displayQuestion() {
-var questionElement = document.getElementById("question");
-questionElement.textContent = questions[currentQuestion].question;
-
-var choices = questions[currentQuestion].choices;
-var choicesList = document.getElementById("choices");
-var choiceButtons = choicesList.getElementsByTagName("button");
-var questionContainer = document.getElementById("pirshej");
-questionContainer.innerHTML = " <h1>Pirsa : "+ parseInt( currentQuestion+1)+"</h1>"
-
-for (var i = 0; i < choiceButtons.length; i++) {
-    choiceButtons[i].textContent = choices[i];
-}
-}
-
-function checkAnswer(choice) {
-if (choice === questions[currentQuestion].correctAnswer) {
-    score++;
-}
-
-currentQuestion++;
-
-if (currentQuestion === questions.length) {
-    endQuiz();
-} else {
-    displayQuestion();
-}
-}
-
-function endQuiz() {
-var questionContainer = document.getElementById("question-container");
-questionContainer.innerHTML = "<h2 style='font-size:xx-large;background-color: white;'>Ezmûn bi dawî bû!</h2>" +
-    "<p style='font-size:xx-large;background-color: white;'>Te bersiva  <span style='font-size:50;color: blue;'> " + score +" </span> pirsan rast got.</p>";
-}
-
-displayQuestion();
-
-    </script>
+        <div class="photo">
+     <img src="ref.png" id="img-drg">           
+        </div>  
+        <script>
+            const roj = document.getElementById("img-drg");
+            function dusem(){
+                roj.style.right="981px"
+            }
+            function sesem(){
+                roj.style.right="652px"
+            }
+            function yeksem(){
+                roj.style.right="1310px"
+            }
+            function carsem(){
+                roj.style.right="327px"
+            }
+            function pensem(){
+                roj.style.right="0px"
+            }
+        </script> 
 </body>
 </html>
